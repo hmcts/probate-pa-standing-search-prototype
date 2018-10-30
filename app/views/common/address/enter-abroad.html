@@ -1,0 +1,14 @@
+{% extends "question_no_sign_out.html" %}
+
+{% block question %}
+{{ title }}
+{% endblock %}
+
+{% block form %}
+<p class="text">You can enter a UK address.</p>
+{% if label %} <p class="text">{{ label }}</p> {% endif %}
+<label for="abroadAddress" class="bold"></label>
+<textarea class="form-control" rows="10" id="abroadAddress"  name="abroadAddress" type="text"></textarea>
+<br/>
+
+{% endblock %}

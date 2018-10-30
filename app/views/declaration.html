@@ -1,0 +1,72 @@
+{% extends "layout_no_sign_out.html" %}
+
+{% block page_title %}
+Question page
+{% endblock %}
+
+{% block content %}
+{% set applicantName = data['executorName0'] %}
+{% set deceasedName = ((data['deceasedFirstName'] if data['deceasedFirstName'] else '[deceasedFirstName]') + ' ' + (data['deceasedLastName'] if data['deceasedLastName'] else '[deceasedLastName]')) | trim %}
+<main id="content" role="main">
+    <div class="phase-banner-beta">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="http://www.smartsurvey.co.uk/s/CFZF7/?pageurl=/declaration">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">Make your legal declaration</h1>
+        </div>
+    </div>
+
+<div class="grid-row">
+    <div class="column-two-thirds">
+    <div class="inset-page">
+        <form class="form" method="post" action="tasklist/grant">
+                    <p></p>
+                    <div class="declaration-header heading-medium">In the High Court of Justice</div>
+                    <div class="declaration-header heading-small">Family Division</div>
+                    <div class="declaration-header heading-small">(Probate)</div>
+                <p></p>
+            <h1 class="form-title heading-medium">Legal statement</h1>
+
+
+            <!-- Applicant name -->
+            <p>I, {{ data.applicant.fullName if data.applicant.fullName else '[applicant.fullName]' }}, of {{ data.applicant.address | address if data.applicant.address else '[applicant.address]' }} make the following statement:</p>
+
+
+            <!-- store own will --> 
+        {% if data.whoseWill === 'My will' %}
+            <p>This is my will{% if data.whoseWill === 'Will and Codicil' %}and codicil{% endif %}. 
+            <p>I understand that criminal proceedings for fraud may be brought against me if I am found to have been deliberately untruthful or dishonest.</p>
+            <p>I understand that the probate registry will not check the contents of the will. </p>
+        {% endif %}
+
+            <!-- store someone else will --> 
+        {% if data.whoseWill === "Someone else's" %}
+            <p> This is the will {% if data.whoseWill === 'Will and Codicil' %}and codicil{% endif %} of {{ data.willMaker.fullName if data.willMaker.fullName else '[willMaker.fullName]' }}. They have authorised me to act on their behalf. </p>
+            <p>I understand that criminal proceedings for fraud may be brought against me if I am found to have been deliberately untruthful or dishonest </p>
+            <p> I understand that the probate registry will not check the contents of the will.</p>
+
+        {% endif %} 
+
+
+    <p><a href="check-your-answers">Go back to your answers</a></p>
+
+            <a class="button" href="pay/payment-breakdown">Accept and continue</a>
+            <br><br>
+    </div>
+
+            <!-- <div class="column-one-third">
+                <h2 class="heading-medium">Save this page</h2>
+                <p><a href="/public/images/printed-legal-statement.pdf" class="button-secondary" target="_new"><img src="/public/images/sealed-claim.png"></a></p>
+                <p><a href="/public/images/printed-legal-statement.pdf">Legal declaration (58kb PDF)</a></p>
+            </div> -->
+    </div>
+
+</div>
+    {% include "includes/help.html" %}
+</main>
+{% endblock %}

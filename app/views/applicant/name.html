@@ -1,0 +1,26 @@
+{% extends "question_no_sign_out.html" %}
+
+{% set question = "What is your name?"%}
+
+{% block question %}
+{{ question }}
+{% endblock %}
+
+{% block form %}
+<!-- <p class="text">Enter your name exactly as it is written in your will.</p>  -->
+<div class="form-group">
+  <fieldset class="form-group {{ " error" if fields.applicantFullName.error }}" >
+    <legend class="visually-hidden">{{question}}</legend>
+    <label class="form-label" for="applicantFullName">
+      Full name
+      <span class="form-hint"></span>
+    </label>
+    {{ errorsFor(fields.applicantFullName) }}
+    <input class="form-control form-control-3-4"
+           id="applicantFullName"
+           name="applicantFullName"
+           type="text"
+           value="{{ data['applicantFullName'] }}">
+  </fieldset>
+</div>
+{% endblock %}

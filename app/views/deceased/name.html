@@ -1,0 +1,28 @@
+{% extends "question_no_sign_out.html" %}
+
+{% set question = "What is the name of the person who died?" %}
+
+{% block question %}
+    {{ question | safe }}
+{% endblock %}
+
+{% block form %}
+<p>Enter their full name including any middle names.</p> 
+<div class="form-group">
+     <fieldset>
+        <legend class="visually-hidden">
+            {{ question | safe }}
+        </legend>
+        
+        <div class="form-group ">
+            
+            <label class="form-label" for="deceasedFirstName">Full name</label>
+            
+            <!-- <p class="form-hint">Include any middle names</p> --> 
+
+            <input type="text" class="form-control form-control-3-4" id="deceasedFirstName" name="deceasedFirstName" value="" maxlength="60">
+        </div>
+
+    </fieldset>
+</div>
+{% endblock %}

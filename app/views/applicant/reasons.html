@@ -1,0 +1,22 @@
+{% extends "question_no_sign_out.html" %}
+
+{% set question %}
+Why do you want to stop the grant of probate for {{ data['deceasedFirstName'] if data['deceasedFirstName'] else '[deceasedFirstName]' }}?
+{% endset %}
+
+{% block question %}
+{{ question }}
+{% endblock %}
+
+{% block form %}
+<p class="text">Your reason will be sent to the person applying for probate, so don't write anything that you don't want them to see.</p>
+ 
+<div class="form-group">
+            <label class="form-label" for="textarea-a">
+              Reason for stopping probate
+            </label>
+            <textarea class="form-control form-control-3-4" id="reasonsForStopping" name="reasonsForStopping" cols="30" rows="10"></textarea>
+          </div>
+
+
+{% endblock %}

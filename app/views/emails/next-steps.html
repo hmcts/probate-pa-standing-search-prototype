@@ -1,0 +1,187 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body style="margin:0;padding:0">
+<style type="text/css">
+    li {
+        font-size: 19px;
+        line-height: 26px
+    }
+    p{
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 19px;
+        line-height: 1.315789474;
+        color: #0B0C0C;
+        margin: 0 0 20px 0;
+    }
+    h1, h2{
+        font-family: Arial, sans-serif;
+    }
+    h1 {
+        font-size: 18px;
+    }
+    h2 {
+        margin: 0 0 20px 0;
+        padding: 0;
+        font-size: 27px;
+        line-height: 35px;
+        font-weight: bold;
+        color: #0B0C0C;
+    }
+</style>
+<div><img src="/public/images/email-header-gmail.png"></div>
+<table style="align-content: left; border-width: 0px; padding: 0px; margin: 0px;">
+    <tr>
+        <td style="width: 30px"></td>
+        <td>
+            <span><h1>Application to stop a grant for probate</h1></span>
+            <h2 class="heading-xsmall">The Probate Registry <i>email@hmcts.gov.uk</i></h2>
+        </td>
+        <td></td>
+    </tr>
+</table>
+<hr>
+<div>
+    <div autoid="_rp_F" class="_rp_E5 rpHighlightAllClass rpHighlightBodyClass allowTextSelection">
+        <div style="display: none;"></div>
+        <div>
+            <div class="_rp_F5 ms-font-weight-regular ms-font-color-neutralDark isMessageBodyInPopout" tabindex="-1" role="presentation" id="Item.MessageNormalizedBody" style="font-family: wf_segoe-ui_normal, Segoe UI, Segoe WP, Tahoma, Arial, sans-serif, serif, EmojiFont;">
+                <div class="rps_2359">
+                    <style type="text/css"><!-- .rps_2359 body { margin: 0!important; } --></style>
+                    <div>
+                        <div style="font-family: Helvetica, Arial, sans-serif, serif, EmojiFont; font-size: 16px; margin: 0px; color: rgb(11, 12, 12);">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="min-width: 100%; width: 100% !important;">
+                                <tbody>
+                                    <tr>
+                                        <td width="100%" height="53" bgcolor="#0b0c0c">
+                                            <table width="100%" cellpadding="0" cellspacing="0" border="0" align="center" style="max-width:580px">
+                                                <tbody>
+                                                    <tr>
+                                                        <td width="70" bgcolor="#0b0c0c" valign="middle">
+                                                            <a href="https://www.gov.uk" target="_blank" rel="noopener noreferrer" title="Go to the GOV.UK homepage" style="text-decoration:none">
+                                                                <table cellpadding="0" cellspacing="0" border="0">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td style="padding-left: 10px"><img data-imagetype="External" src="https://static.notifications.service.gov.uk/images/gov.uk_logotype_crown.png" alt="" height="32" border="0" style="margin-top:4px"> </td>
+                                                                            <td style="font-size: 28px; line-height: 1.315789474; margin-top: 4px; padding-left: 10px"><span style="font-family: Helvetica, Arial, sans-serif, serif, EmojiFont; font-weight: 700; color: rgb(255, 255, 255); text-decoration: none; vertical-align: top; display: inline-block;">GOV.UK</span></td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="x_content" align="center" cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width:580px; width:100%!important">
+                                <tbody>
+                                    <tr>
+                                        <td width="10" height="10" valign="middle"></td>
+                                        <td>
+                                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td bgcolor="#005EA5" width="100%" height="10"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                        <td width="10" valign="middle" height="10"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="x_content" align="center" cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width:580px; width:100%!important">
+                                <tbody>
+                                    <tr>
+                                        <td height="30">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="10" valign="middle">&nbsp;</td>
+                                        <td style="font-family: Helvetica, Arial, sans-serif; font-size: 19px; line-height: 1.315789474; max-width: 560px">
+                                            <p class="text">Dear {{ data['applicantFullName'] }}.</p>
+                                            <p class="text">We've received your application to stop a grant of probate for the estate of {{ data['deceasedFirstName'] if data['deceasedFirstName'] else '[deceasedFirstName]' }}.</p>
+                                            <p class="text">Your application reference number is: 1234-1235-1236-1237.</p>
+                                            <h2 class="heading-medium">What happens now</h2>
+                                            <p class="text"> We'll stop the application for probate.</p>
+                                            <!-- <p class="text">We'll contact the person applying for probate to tell them you've stopped their application and give them your reasons for doing so.</p> --> 
+                                            <p class="text">You should try and sort things out with the person applying for probate if you can. We also recommend that you get legal advice.</p>
+
+                                            <h2 class="heading-medium">What may happen next</h2>
+                                            <p class="text"> If you are unable to resolve things with the person applying for probate, they may give you a 'warning'.</p>
+                                            <p class="text">You have 20 days to respond to a warning. You have 2 choices:</p>
+                                            <p class="text">1. You can 'enter an appearance'. You may do this if you believe that that the person who died had different intentions to those held by the person currently applying for probate, For example, if you think the will is not valid.</p>
+                                            <p class="text">2. You can 'request a summons for directions'. You may do this if you want to apply for probate instead of the person who started the application. For example if you are also named as an executor in the will of the person who died.</p>
+                                            <p class="text">If you receive a warning, we will send you more information about how you can respond. However, we won't be able to give you legal advice.</p>
+                                            <h2 class="heading-medium">Get help</h2>
+                                            <p class="text">You can contact the probate registry on:</p>
+                                            <p class="text">Kind regards,</p>
+                                            <p class="text">The Probate Registry</p>
+
+                                             <br>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+
+
+
+
+
+
+                                            <!-- <p>Dear {{ data.applicant.fullName if data.applicant.fullName else '[applicant.fullName]' }},</p>
+                                            <p>Your will dated {{ data.will.date.day if data.will.date.day else '[will.date.day]' }} {{ data.will.date.month | month if data.will.date.month else '[will.date.month]' }} {{ data.will.date.year if data.will.date.year else '[will.date.year]' }} has been stored safely with the Probate registry.</p>
+                                            <p>Your reference number is 329483.</p>
+                                            <p>We recommend you print a copy of this certificate and keep it in a safe place. This certificate of deposit will be needed to withdraw your will.</p>
+
+                                            <h2>Your will details</h2>
+                                            <p><strong>Document stored:</strong> {{ data.whatDepositing if data.whatDepositing else '[whatDepositing]' }}</p>
+                                            <p><strong>Number of executors:</strong> {{ data.executors.numberOfExecutors if data.executors.numberOfExecutors else '[executors.numberOfExecutors]' }}</p>
+
+                                            {% for i in range(0, data.executors.numberOfExecutors) %}
+                                                <p><strong>Executor {{ i+1 }}:</strong> {{ data.executors['executor' + i].fullName if data.executors['executor' + i].fullName else '[executors.executor' + i + '.fullName]' }} of {{ data.executors['executor' + i].address | address if data.executors['executor' + i].address else '[executors.executor' + i + '.address]' }}</p>
+                                            {% endfor %}
+                                            <p></p>
+
+                                            <table style="padding: 0 0 20px 0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="font-family: Helvetica, Arial, sans-serif"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                            <h2>Withdrawing your will</h2>
+                                            <p>During your lifetime, only you can withdraw your own will from safekeeping. There is no charge for this.</p>
+                                            <p>You can request to withdraw your will online by searching for "withdraw a will" on gov.uk. You will need to quote your reference number when withdrawing your will.</p>
+                                            <p>The will can then be sent out to you by registered or recorded post. You must complete the enclosed acknowledgement of receipt and return it to the Principal Probate Registry.</p>
+                                        </td>
+                                        <td width="10" valign="middle">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td height="30">&nbsp;</td>
+                                    </tr>
+                                </tbody>
+                            </table> -->
+
+                            This e-mail is private and is intended only for the addressee and any copy recipients. If you are not an intended recipient, please advise the sender immediately by reply e-mail and delete this message and any attachments without retaining a copy. Activity and use of this communication is monitored to secure their effective operation and for other lawful business purposes. Communications using these systems will also be monitored and may be recorded to secure effective operation and for other lawful business purposes.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="display: none;"></div>
+        </div>
+    </div>
+</div>
+<script src="/public/javascripts/govuk-template.js?0.18.3"></script>
+
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script src="/public/javascripts/govuk/selection-buttons.js"></script>
+<script src="/public/javascripts/govuk/shim-links-with-button-role.js"></script>
+<script src="/public/javascripts/govuk/show-hide-content.js"></script>
+<script src="/public/javascripts/application.js"></script>
+</body>

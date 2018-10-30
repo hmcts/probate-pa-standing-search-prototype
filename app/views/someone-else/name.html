@@ -1,0 +1,26 @@
+{% extends "question_no_sign_out.html" %}
+
+{% set question = "Who are you applying on behalf of?" %}
+
+{% block question %}
+  {{ question }}
+{% endblock %}
+
+{% block form %}
+<!-- <p class="text">Enter their name as it appears in the will. </p> -->
+<div class="form-group">
+  <fieldset class="form-group {{ "error" if fields.caveatorFullName.fullName.error }}" >
+    <legend class="visually-hidden">Full name</legend>
+    <label class="form-label-bold" for="caveatorFullName">
+      Full name
+      <!-- <span class="form-hint">Including middle names</span> -->
+    </label>
+    {{ errorsFor(fields.caveatorFullName) }}
+    <input class="form-control form-control-3-4"
+           id="caveatorFullName"
+           name="caveatorFullName"
+           type="text"
+           value="{{ fields.caveatorFullName.value }}">
+  </fieldset>
+</div>
+{% endblock %}

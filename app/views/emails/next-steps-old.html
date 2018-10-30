@@ -1,0 +1,59 @@
+{% extends "layout_unbranded.html" %}
+
+{% block page_title %}
+Client invitation email
+{% endblock %}
+
+{% block content %}
+
+
+<main id="content" role="main">
+    <div><img src="/public/images/email-header.png"></div>
+    <!-- <h1 class="heading-small">Caveat...</h1> -->
+    <h2 class="heading-xsmall">The Probate Service <i>probate@hmcts.gov.uk</i></h2>
+    <hr/>
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <p>Dear {{ data['applicantFullName'] }},</p>
+            <p> We’ve received your application to stop a grant of probate for the estate of {{ data['deceasedFullName'] }}. </p>
+            <p>Your application reference number is: 1234-1234-1234-1234</p>
+
+            <h3 class="heading-medium"><p>What happens now</p></h3>
+
+            <p class="text"> We’ll stop the application for probate.
+
+            <p class="text"> We’ll contact the person applying for probate to tell them you’ve stopped their application and give them your reasons for doing so. </p>
+
+            <p class="text">You should try and sort things out with the person applying for probate if you can. We also recommend that you get legal advice.</p>
+
+            <h2 class="heading-medium"><p> What may happen next </p> </h2>
+
+            <p class="text"> If you are unable to resolve things with the person applying for probate, they may give you a ‘warning’. </p>
+
+            <p class="text">You have 20 days to respond to a warning. You have 2 choices:</p>
+            <p class="text">
+                <ol class="list list-numbered">
+                    <li><strong>1. You can ‘enter an appearance’. </strong> You may do this if you believe that that the person who died had different intentions to those held by the person currently applying for probate, For example, if you think the will is not valid.</li>
+                    <br>
+                    <li><strong>2. You can ‘request a summons for directions’. </strong> You may do this if you want to apply for probate instead of the person who started the application. For example if you are also named as an executor in the will of the person who died.</li>
+                 </ol>
+            </p>
+
+            <p class="text"> If you receive a warning, we will send you more information about how you can respond. However, we won’t be able to give you legal advice. </p>
+
+            <h2 class="heading-medium"><p>Get help</p></h2>
+            <p class="text"> You can contact the probate registry on:</p>
+
+
+
+
+
+
+            <p>Kind regards,<br/>
+                The Probate Registry</p>
+        </div>
+    </div>
+</main>
+
+
+{% endblock %}

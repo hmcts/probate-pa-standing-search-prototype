@@ -1,0 +1,29 @@
+{% extends "question_no_sign_out.html" %}
+
+{% set question %}
+  Do you have the agreement of {{ data.caveatorFullName }} to apply?
+{% endset %}
+
+{% block question %}
+  {{ question }}
+{% endblock %}
+
+{% block form %}
+<p class="text">The person you are acting for must be able to make their own decisions. </p>
+<!-- <p class="text">You need to include a letter signed by them giving you the authority to act on their behalf.</p> --> 
+
+<!-- You’ll need to include a letter from the person whose will you are storing to say you have the authority to act on their behalf.</p> --> 
+  <div class="form-group">
+    <fieldset class="">
+      <legend class="visually-hidden">{{question}}</legend>
+      <div class="multiple-choice">
+        <input id="radio-1" type="radio" name="permissionGiven" value="Yes" {{ data.permissionGiven | checkedIf('Yes') }}>
+        <label for="radio-1">Yes, I have been given authority to apply for a caveat</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="radio-2" type="radio" name="permissionGiven" value="No" {{ data.permissionGiven | checkedIf('No') }}>
+        <label for="radio-2">No</label>
+      </div>
+    </fieldset>
+  </div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "question_no_sign_out.html" %}
+{% set question = "What is your email address?" %}
+{% block question %}
+   {{ question }}
+{% endblock %}
+{% block form %}
+<!--   <p class="text">You’ll be contacted on a weekday between 9.30am and 5.00pm if more information is needed.</p> -->
+
+<div class="form-group">
+   <label for="applicantPhoneNumber" class="form-label">Email</label>
+   <input class="form-control" id="applicantEmail" name="applicantEmail" type="text" value="{{ data['applicantEmail'] }}">
+</div>
+{% endblock %}

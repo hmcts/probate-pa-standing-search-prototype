@@ -1,0 +1,144 @@
+{% extends "layout_no_sign_out.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">
+        Probate: Caveat v1
+<!--         <span class="heading-secondary">Prototype kit: {{releaseVersion}}</span>
+ -->      </h1><!-- {{releaseVersion | log }} -->
+
+      <a href="start-page" class="button button-start">Start</a>
+      
+
+      <!-- <a href="/emails/invitation-redeclaration" class="button button-start">Redeclaration</a> -->
+<!--       <a href="/test/set-session">Insert dummy information</a>
+ -->      
+ <hr>
+<p>Testing at the GDS lab on 25 October 2018</p>
+<hr>
+      <details>
+
+          <summary><span class="summary">All pages</span></summary>
+
+          <div class="panel panel-border-narrow">
+
+              <ul class="list list-number">
+              	<li><a href="start-page">Start page</a></li>
+                <li><a href="/deceased/name">Deceased: name</a></li>
+                <li><a href="/deceased/dod">Deceased: DOD</a></li>
+                <li><a href="/deceased/alias">Deceased: alias</a>
+                    <ul class="list list-number">
+                      <li><a href="/deceased/other-names">Deceased: Other names deceased held assets in</a></li>
+                    </ul>
+                </li>
+                <li><a href="/deceased/address/postcode">Deceased: Permanent address</a></li>
+                <li><a href="/applicant/who-applying-on-behalf-of">applying for self or someone else</a></li>
+                <li><a href="/applicant/name">Applicant: full name</a></li>
+                <li><a href="/applicant/email-address">Applicant: email address</a></li>
+                <li><a href="/applicant/address/postcode">Applicant: address</a></li>
+                <li><a href="check-your-answers">Check your answers</a></li>
+                <li><a href="declaration">Legal statement and declaration</a>
+              </ul>     
+
+              <h3 class="heading-small">Pay</h3>
+              <ul class="list list-number">
+              	<li><a href="/pay/payment-breakdown">Fee breakdown</a></li>
+              	<li><a href="/pay/enter-card-details">Card details</a></li>
+              	<li><a href="/pay/confirm-your-payment">Confirm your payment</a></li>
+              	<li><a href="/pay/application-submitted">Application submitted</a></li>
+                <li><a href="thank-you">Thank you</a></li>
+             </ul>	
+
+
+              </ul>
+
+              <h3 class="heading-small">Notifications</h3>
+
+             <ul class="list list-number">
+               <li><a href="/emails/next-steps">Email: next steps </a></li>
+             </ul>
+        <hr>
+        		<h3 class="heading-medium">Examples and documentation</h3>
+
+        	<ul class="list list-bullet">
+        		<li><a href="/docs/tutorials-and-examples">Example pages and documentation</a></li>
+        		<li><a href="https://github.com/alphagov/govuk_prototype_kit">GitHub</a></li>
+        	</ul>
+
+              <h3 class="heading-medium">Other resources</h3>
+
+        			<ul class="list list-bullet">
+        				<li>
+        					<a href="https://govuk-elements.herokuapp.com/snippets/">
+        						Guide to GOV.UK Elements
+        					</a>
+        				</li>
+        				<li>
+        					<a href="https://www.gov.uk/service-manual">
+        						Service design manual
+        					</a>
+        				</li>
+        				<li>
+        					<a href="https://www.gov.uk/design-principles">
+        						Government Digital Service Design Principles
+        					</a>
+        				</li>
+        			</ul>
+          </div>
+
+</details>
+
+      <details>
+
+          <summary><span class="summary">Previous prototype versions</span></summary>
+
+          <div class="panel panel-border-narrow">
+            <ul class="list list-bullet">
+                    <li><a href="#">Version ...</a>
+                     <p class="heading-small">What's new</p>
+                    <ul class="list list-bullet">
+                      <li>...</li>
+                    </ul>
+                      </li>
+                  </ul>
+                  <span class="form-hint" style="padding-bottom:20px;">Tested ...... 2018 at .........</span>
+
+                 
+
+          </div>    
+    </div>
+
+    <!-- aside -->
+    <div class="column-third">
+
+              <aside class="govuk-related-items" role="complementary">
+                <h2 class="heading-medium" id="subsection-title">Controls</h2>
+                <nav role="navigation" aria-labelledby="subsection-title">
+                  <ul class="font-xsmall">
+                    <li><a class="secondary-button" href="/test/set-session">Insert dummy information</a></li>
+                    <li>
+                    </li>
+                  </ul>
+                </nav>
+              </aside>
+
+              <aside class="govuk-related-items" role="complementary">
+
+              
+            </div>
+  </div>
+
+
+</main>
+
+{% endblock %}
+
+
