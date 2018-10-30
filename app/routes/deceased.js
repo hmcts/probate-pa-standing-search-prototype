@@ -106,7 +106,7 @@ module.exports = function (router) {
     set(req.session.data, 'deceased.home.county', req.body.county)
     set(req.session.data, 'deceased.home.postcode', req.body.postcode)
 
-    res.redirect('/applicant/name')
+    res.redirect('/deceased/copies')
   })
 
   router.get('/deceased/address/abroad', function (req, res) {
@@ -123,11 +123,19 @@ module.exports = function (router) {
     set(req.session.data, 'deceased.home.county', '')
     set(req.session.data, 'deceased.home.postcode', '')
 
+    res.redirect('/deceased/copies')
+  })
+
+  router.post('/deceased/copies', function (req, res) {
+    res.redirect('/deceased/copies-amount')
+  })
+
+  router.post('/deceased/copies-amount', function (req, res) {
     res.redirect('/applicant/name')
   })
 
 //router.post('/applicant/reasons', function (req, res) {
-//    res.redirect('/applicant/name') 
+//    res.redirect('/applicant/name')
 //  })
 
 

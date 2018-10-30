@@ -1,0 +1,17 @@
+{% extends "question_no_sign_out.html" %}
+
+{% set question = "How many copies do you want" %}
+
+{% block question %}
+    {{ question }}
+{% endblock %}
+
+{% block form %}
+<p class="text">Enter the date from the death certificate. For example, 30 06 2016.</p>
+<div class="form-group">
+<fieldset class="form-group " id ="dod_date">
+    <legend class="visually-hidden">Please enter date of death</legend>
+
+</fieldset>
+</div>
+{% endblock %}
