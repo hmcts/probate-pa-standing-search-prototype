@@ -126,13 +126,27 @@ module.exports = function (router) {
     res.redirect('/deceased/copies')
   })
 
-  router.post('/deceased/copies', function (req, res) {
-    res.redirect('/deceased/copies-amount')
-  })
 
-  router.post('/deceased/copies-amount', function (req, res) {
+  router.post('/deceased/copies', function (req, res) {
+
+  // Make a variable and give it the value from 'juggling-balls'
+  var extraCopies = req.session.data['copies']
+
+  // Check whether the variable matches a condition
+  if (extraCopies == "Yes"){
+    // Send user to next page
+    res.redirect('/deceased/copies-amount')
+  }
+  else {
+    // Send user to ineligible page
     res.redirect('/applicant/name')
-  })
+  }
+
+})
+
+router.post('/deceased/copies-amount', function (req, res) {
+  res.redirect('/applicant/name')
+})
 
 //router.post('/applicant/reasons', function (req, res) {
 //    res.redirect('/applicant/name')

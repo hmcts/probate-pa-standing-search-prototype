@@ -1,16 +1,30 @@
 {% extends "question_no_sign_out.html" %}
 
-{% set question = "How many copies do you want" %}
+{% set question = "How many extra copies do you want" %}
 
 {% block question %}
     {{ question }}
 {% endblock %}
 
 {% block form %}
-<p class="text">Enter the date from the death certificate. For example, 30 06 2016.</p>
+<p class="text">Some text.</p>
 <div class="form-group">
 <fieldset class="form-group " id ="dod_date">
     <legend class="visually-hidden">Please enter date of death</legend>
+
+    <label class="form-label" for="numberOfExecutors">
+                Number of wills
+            </label>
+    <input class="form-control" id="numberOfWills" type="number" name="numberOfWills" style="width:4em;" value="{{data['numberOfWills']}}">
+
+    <br>
+    <br>
+
+
+    <label class="form-label" for="numberOfExecutors">
+                Number of grants
+            </label>
+    <input class="form-control" id="numberOfGrants" type="number" name="numberOfGrants" style="width:4em;" value="{{data['numberOfGrants']}}">
 
 </fieldset>
 </div>

@@ -146,6 +146,53 @@ Question page
             </tr> -->
 
             <tr>
+                <td colspan="3"><span class="heading-medium">The will and grant</span></td>
+            </tr>
+
+
+            <tr>
+                <td colspan="2">
+                    <div class="grid-row">
+                        <div class="column-one-half check-your-answers__question">Extra copies of the will and grant</div>
+                        <div class="column-one-half">{{ data['copies'] if data['copies'] else '[copies]' }}</div>
+                    </div>
+                </td>
+                <td class="change-answer">
+                    <a href="{{ '/deceased/copies' | redirectUrl('/check-your-answers', '/check-your-answers')}}">Change</a>
+                </td>
+            </tr>
+
+            {% if (data['copies'] === "Yes") %}
+            <tr>
+                <td colspan="2">
+                    <div class="grid-row">
+                        <div class="column-one-half check-your-answers__question">How many will copies</div>
+                        <div class="column-one-half">{{ data['numberOfWills'] if data['numberOfWills'] else '[numberOfWills]' }}</div>
+                    </div>
+                </td>
+                <td class="change-answer">
+                    <a href="{{ '/deceased/copies-amount' | redirectUrl('/check-your-answers', '/check-your-answers')}}">Change</a>
+                </td>
+            </tr>
+            {% endif %}
+
+            {% if (data['copies'] === "Yes") %}
+            <tr>
+                <td colspan="2">
+                    <div class="grid-row">
+                        <div class="column-one-half check-your-answers__question">How many grant copies</div>
+                        <div class="column-one-half">{{ data['numberOfGrants'] if data['numberOfGrants'] else '[numberOfGrants]' }}</div>
+                    </div>
+                </td>
+                <td class="change-answer">
+                    <a href="{{ '/deceased/copies-amount' | redirectUrl('/check-your-answers', '/check-your-answers')}}">Change</a>
+                </td>
+            </tr>
+            {% endif %}
+
+
+
+            <tr>
                 <td colspan="3"><span class="heading-medium">About you</span></td>
             </tr>
             <!-- <tr>
