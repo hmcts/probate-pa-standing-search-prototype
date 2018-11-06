@@ -1,7 +1,7 @@
 {% extends "question_no_sign_out.html" %}
 
 {% set question %}
-Do you want extra copies of {{ data['deceasedFirstName'] if data['deceasedFirstName'] else '[deceasedFirstName]' }} will or grant?
+Do you want extra copies of {{ data['deceasedFirstName'] if data['deceasedFirstName'] else '[deceasedFirstName]' }} will and grant of probate?
 {% endset %}
 
 {% block question %}
@@ -9,7 +9,7 @@ Do you want extra copies of {{ data['deceasedFirstName'] if data['deceasedFirstN
 {% endblock %}
 
 {% block form %}
-<p>A search gives you one copy of will and grant</p>
+<p>You'll get a one copy of the will and grant of probate.</p>
 <div class="form-group">
   <fieldset class="inline">
     <legend class="visually-hidden">{{ question }}</legend>
