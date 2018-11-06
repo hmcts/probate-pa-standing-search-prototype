@@ -20,23 +20,33 @@
 
             <form class="form" action="/pay/enter-card-details" novalidate>
                 <input type="hidden" name="" value="">
-                
+
         <h1 class="heading-large">
-            Payment
+            Payment summary
         </h1>
+
+
         <table class="form-group">
             <tbody>
                 <tr>
                     <td colspan="2">
                         <div class="grid-row column-two-thirds">
-                            <div class="bold-medium">Application fee</div>
+                            <div class="bold-small">Description</div>
                         </div>
                     </td>
-                    <td class="change-answer">
-                        <div class="font-medium">&pound;20<!-- {{application_fee}} --></div>
+                    <td colspan="2">
+                        <div class="grid-row column-two-thirds">
+                            <div class="bold-small">Quantity</div>
+                        </div>
                     </td>
+                    <td colspan="2">
+                        <div class="grid-row column-two-thirds">
+                            <div class="bold-small">Price</div>
+                        </div>
+                    </td>
+
                 </tr>
-                
+
                 <!-- <tr>
                     <td colspan="2">
                         <div class="grid-row column-two-thirds">
@@ -64,14 +74,73 @@
                 <tr>
                     <td colspan="2">
                         <div class="grid-row column-two-thirds">
-                            <div class="bold-medium">Total due</div>
+                            <div class="font-small">Grant of probate notification</div>
+                        </div>
+                    </td>
+                    <td colspan="2">
+                        <div class="grid-row column-two-thirds">
+                            <div class="font-small">1</div>
                         </div>
                     </td>
 
                     <td>
-                            <div class="font-medium">&pound;20</div>
+                            <div class="font-small">&pound;<span id="numberOfSearch">20.00<span></div>
                     </td>
                 </tr>
+
+                {% if (data['copies'] === "Yes") %}
+                <tr>
+                    <td colspan="2">
+                        <div class="grid-row column-two-thirds">
+                            <div class="font-small">Copies of will and grant</div>
+                        </div>
+                    </td>
+                    <td colspan="2">
+                        <div class="grid-row column-two-thirds">
+                            <div class="font-small">{{ data['copiesAmount'] if data['copiesAmount'] else '[copiesAmount]' }}</div>
+                        </div>
+                    </td>
+
+                    <td>
+                            <div class="font-small">&pound;<span id="numberOfCopies">1.50<span></div>
+                    </td>
+                </tr>
+                {% endif %}
+
+                <!-- <tr>
+                    <td colspan="2">
+                        <div class="grid-row column-two-thirds">
+                            <div class="font-small">Copies of grant</div>
+                        </div>
+                    </td>
+                    <td colspan="2">
+                        <div class="grid-row column-two-thirds">
+                            <div class="font-small">2</div>
+                        </div>
+                    </td>
+
+                    <td>
+                            <div class="font-small">&pound;1.00</div>
+                    </td>
+                </tr> -->
+
+                <tr>
+                    <td colspan="2">
+                        <div class="grid-row column-two-thirds">
+                            <div class="bold-small">Total due</div>
+                        </div>
+                    </td>
+                    <td colspan="2">
+                        <div class="grid-row column-two-thirds">
+                            <div class="bold-medium"></div>
+                        </div>
+                    </td>
+
+                    <td>
+                            <div class="bold-small">&pound;<span id="orderTotal">21.50<span></div>
+                    </td>
+                </tr>
+
             </tbody>
         </table>
     <div class="form-group">
@@ -79,10 +148,22 @@
     </div>
 
             </form>
-            
+
         </div>
     </div>
 </main>
+
+
+<!-- <script>
+var numbers = [20, 44, 12, 4];
+
+function getSum(total, num) {
+    return total + num;
+}
+function myFunction(item) {
+    document.getElementById("orderTotal").innerHTML = numbers.reduce(getSum);
+}
+</script> -->
 
 
 {% endblock %}

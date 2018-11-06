@@ -166,8 +166,8 @@ Question page
             <tr>
                 <td colspan="2">
                     <div class="grid-row">
-                        <div class="column-one-half check-your-answers__question">How many will copies</div>
-                        <div class="column-one-half">{{ data['numberOfWills'] if data['numberOfWills'] else '[numberOfWills]' }}</div>
+                        <div class="column-one-half check-your-answers__question">Number of copies</div>
+                        <div class="column-one-half">{{ data['copiesAmount'] if data['copiesAmount'] else '[copiesAmount]' }}</div>
                     </div>
                 </td>
                 <td class="change-answer">
@@ -176,7 +176,7 @@ Question page
             </tr>
             {% endif %}
 
-            {% if (data['copies'] === "Yes") %}
+            <!-- {% if (data['copies'] === "Yes") %}
             <tr>
                 <td colspan="2">
                     <div class="grid-row">
@@ -188,7 +188,7 @@ Question page
                     <a href="{{ '/deceased/copies-amount' | redirectUrl('/check-your-answers', '/check-your-answers')}}">Change</a>
                 </td>
             </tr>
-            {% endif %}
+            {% endif %} -->
 
 
 
