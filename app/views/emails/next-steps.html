@@ -103,19 +103,12 @@
                                         <td width="10" valign="middle">&nbsp;</td>
                                         <td style="font-family: Helvetica, Arial, sans-serif; font-size: 19px; line-height: 1.315789474; max-width: 560px">
                                             <p class="text">Dear {{ data['applicantFullName'] }}.</p>
-                                            <p class="text">We've received your application to stop a grant of probate for the estate of {{ data['deceasedFirstName'] if data['deceasedFirstName'] else '[deceasedFirstName]' }}.</p>
+                                            <p class="text">We've received your application to be notified when a grant of probate is issued for 
+                                            {{ data['deceasedFullName'] }}</p>
                                             <p class="text">Your application reference number is: 1234-1235-1236-1237.</p>
                                             <h2 class="heading-medium">What happens now</h2>
-                                            <p class="text"> We'll stop the application for probate.</p>
-                                            <!-- <p class="text">We'll contact the person applying for probate to tell them you've stopped their application and give them your reasons for doing so.</p> --> 
-                                            <p class="text">You should try and sort things out with the person applying for probate if you can. We also recommend that you get legal advice.</p>
-
-                                            <h2 class="heading-medium">What may happen next</h2>
-                                            <p class="text"> If you are unable to resolve things with the person applying for probate, they may give you a 'warning'.</p>
-                                            <p class="text">You have 20 days to respond to a warning. You have 2 choices:</p>
-                                            <p class="text">1. You can 'enter an appearance'. You may do this if you believe that that the person who died had different intentions to those held by the person currently applying for probate, For example, if you think the will is not valid.</p>
-                                            <p class="text">2. You can 'request a summons for directions'. You may do this if you want to apply for probate instead of the person who started the application. For example if you are also named as an executor in the will of the person who died.</p>
-                                            <p class="text">If you receive a warning, we will send you more information about how you can respond. However, we won't be able to give you legal advice.</p>
+                                            <p class="text"> You will receive a copy of the will and the grant of probate if it is issued in the next 6 months.</p>
+                                            <p class="text">If it hasn't been issued in that time, you will need to apply again for another 6 months.</p>
                                             <h2 class="heading-medium">Get help</h2>
                                             <p class="text">You can contact the probate registry on:</p>
                                             <p class="text">Kind regards,</p>
