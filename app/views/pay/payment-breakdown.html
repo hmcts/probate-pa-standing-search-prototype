@@ -73,7 +73,7 @@
 
                 <tr>
                     <td colspan="2">
-                        <div class="grid-row column-two-thirds">
+                        <div class="grid-row column-two-thirds pay-column">
                             <div class="font-small">Grant of probate notification</div>
                         </div>
                     </td>
@@ -84,7 +84,7 @@
                     </td>
 
                     <td>
-                            <div class="font-small">&pound;<span id="numberOfSearch">20.00<span></div>
+                            <div class="font-small">&pound;<span id="numberOfSearch">10.00<span></div>
                     </td>
                 </tr>
 
@@ -102,7 +102,7 @@
                     </td>
 
                     <td>
-                            <div class="font-small">&pound;<span id="numberOfCopies">1.50<span></div>
+                            <div class="font-small">&pound;<span id="numberOfCopies">{{ (data['copiesAmount'] * 0.5) | toFixed(2)  }}</span></div>
                     </td>
                 </tr>
                 {% endif %}
@@ -137,7 +137,8 @@
                     </td>
 
                     <td>
-                            <div class="bold-small">&pound;<span id="orderTotal">21.50<span></div>
+                      <input id="totalAmount" name="totalAmount" type="hidden" value="{{ 10 + ((data['copiesAmount'] * 0.5) | toFixed(2)) }}" />
+                      <div class="bold-small">&pound;{{ 10 + ((data['copiesAmount'] * 0.5) | toFixed(2)) }}</div>
                     </td>
                 </tr>
 
@@ -154,7 +155,7 @@
 </main>
 
 
-<!-- <script>
+<script>
 var numbers = [20, 44, 12, 4];
 
 function getSum(total, num) {
@@ -163,7 +164,7 @@ function getSum(total, num) {
 function myFunction(item) {
     document.getElementById("orderTotal").innerHTML = numbers.reduce(getSum);
 }
-</script> -->
+</script>
 
 
 {% endblock %}

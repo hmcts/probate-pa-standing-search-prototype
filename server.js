@@ -67,6 +67,10 @@ var nunjucksAppEnv = nunjucks.configure(appViews, {
   watch: true
 })
 
+nunjucksAppEnv.addFilter('toFixed', function(num, digits) {
+  return (isNaN(num)) ? 0 : parseFloat(num).toFixed(digits)
+});
+
 // Nunjucks filters
 utils.addNunjucksFilters(nunjucksAppEnv)
 
