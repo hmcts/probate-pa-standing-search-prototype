@@ -21,7 +21,7 @@ module.exports = function (router) {
       return res.redirect('/deceased/other-names')
     }
     set(req.session, 'data.deceasedAliasCount', 0)
-    return res.redirect('/deceased/address/postcode')
+    return res.redirect('/deceased/address-known')
   })
 
 
@@ -45,7 +45,7 @@ module.exports = function (router) {
       return res.redirect('other-names')
     }
     set(req.session, 'data.deceasedAliasCount', parseInt(req.body.deceasedAliasCount))
-    return res.redirect('/deceased/address/postcode')
+    return res.redirect('/deceased/address-known')
   })
 
   router.post('/deceased/will-date', function (req, res) {
@@ -125,6 +125,23 @@ module.exports = function (router) {
 
     res.redirect('/deceased/copies')
   })
+
+  router.post('/deceased/address-known', function (req, res) {
+
+  // Make a variable and give it the value from 'juggling-balls'
+  var address = req.session.data['addressKnown']
+
+  // Check whether the variable matches a condition
+  if (address == "Yes"){
+    // Send user to next page
+    res.redirect('/deceased/address/postcode')
+  }
+  else {
+    // Send user to ineligible page
+    res.redirect('/deceased/copies')
+  }
+
+})
 
 
   router.post('/deceased/copies', function (req, res) {

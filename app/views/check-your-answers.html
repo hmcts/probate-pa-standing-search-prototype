@@ -120,6 +120,18 @@ Question page
             <tr>
                 <td colspan="2">
                     <div class="grid-row">
+                        <div class="column-one-half check-your-answers__question">Do you know what {{ data['deceasedFirstName'] if data['deceasedFirstName'] else '[deceasedFirstName]' }} permanent address was?</div>
+                        <div class="column-one-half">{{ data['addressKnown'] if data['addressKnown'] else '[addressKnown]' }}</div>
+                    </div>
+                </td>
+                <td class="change-answer">
+                    <a href="{{ '/deceased/copies' | redirectUrl('/check-your-answers', '/check-your-answers')}}">Change</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <div class="grid-row">
                         <div class="column-one-half check-your-answers__question">What was the permanent address of {{ data['deceasedFirstName'] if data['deceasedFirstName'] else '[deceasedFirstName]' }}?</div>
                         <div class="column-one-half">{{ data.deceased.home | address }}</div>
                     </div>
