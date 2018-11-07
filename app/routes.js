@@ -76,8 +76,10 @@ router.get('/pay/payment-breakdown', function (req, res) {
   }
   const ukGrant = req.session.data.ukGrant || 0
   const overseasGrant = req.session.data.overseasGrant || 0
+  const copiesAmount = req.session.data.copiesAmount || 0
   const totalDue = (ukGrant * docFee) + (overseasGrant * docFee) + currentFee
-  const totalDueDisplay = (totalDue) === parseInt(totalDue) ? totalDue : totalDue.toFixed(2)
+  // const totalDueDisplay = (totalDue) === parseInt(totalDue) ? totalDue : totalDue.toFixed(2)
+  const totalDueDisplay = (10 + parseInt(copiesAmount) * 0.5).toFixed(2)
   set(req.session.data, 'total_due', totalDueDisplay)
 
   res.render('pay/payment-breakdown', {
@@ -85,7 +87,7 @@ router.get('/pay/payment-breakdown', function (req, res) {
     application_fee: currentFee,
     ukGrantFee: (docFee * ukGrant) === parseInt(docFee * ukGrant) ? docFee * ukGrant : (docFee * ukGrant).toFixed(2),
     overseasGrantFee: (docFee * overseasGrant) === parseInt(docFee * overseasGrant) ? docFee * overseasGrant : (docFee * overseasGrant).toFixed(2),
-    totalDue: (totalDue) === parseInt(totalDue) ? totalDue : totalDue.toFixed(2)
+    totalDue: totalDueDisplay
   })
 })
 
