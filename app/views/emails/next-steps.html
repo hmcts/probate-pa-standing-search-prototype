@@ -103,8 +103,8 @@
                                         <td width="10" valign="middle">&nbsp;</td>
                                         <td style="font-family: Helvetica, Arial, sans-serif; font-size: 19px; line-height: 1.315789474; max-width: 560px">
                                             <p class="text">Dear {{ data['applicantFullName'] }}.</p>
-                                            <p class="text">We've received your application to be notified when a grant of probate is issued for 
-                                            {{ data['deceasedFullName'] }}</p>
+                                            <p class="text">We've received your application to be notified when a grant of probate is issued for
+                                            {{ data['deceasedFirstName'] if data['deceasedFirstName'] else '[deceasedFirstName]' }}.</p>
                                             <p class="text">Your application reference number is: 1234-1235-1236-1237.</p>
                                             <h2 class="heading-medium">What happens now</h2>
                                             <p class="text"> You will receive a copy of the will and the grant of probate if it is issued in the next 6 months.</p>
