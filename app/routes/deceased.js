@@ -156,13 +156,13 @@ module.exports = function (router) {
   }
   else {
     // Send user to ineligible page
-    res.redirect('/applicant/name')
+    res.redirect('/check-your-answers')
   }
 
 })
 
 router.post('/deceased/copies-amount', function (req, res) {
-  res.redirect('/applicant/name')
+  res.redirect('/check-your-answers')
 })
 
 //router.post('/applicant/reasons', function (req, res) {

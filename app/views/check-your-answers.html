@@ -23,6 +23,60 @@ Question page
     <table class="check-your-answers form-group">
         <tbody>
 
+          <tr>
+              <td colspan="3"><span class="heading-medium">About you</span></td>
+          </tr>
+
+          {% if (data['whoApplying'] === "Someone else's") %}
+          <tr>
+              <td colspan="2">
+                  <div class="grid-row">
+                      <div class="column-one-half check-your-answers__question">Who are you applying on behalf of?</div>
+                      <div class="column-one-half">{{ data['caveatorFullName'] if data['caveatorFullName'] else '[caveatorFullName]' }}</div>
+                  </div>
+              </td>
+              <td class="change-answer">
+                  <a href="{{ '/applicant/who-applying-on-behalf-of' | redirectUrl('/applicant/who-applying-on-behalf-of', '/check-your-answers')}}">Change</a>
+              </td>
+          </tr>
+          {% endif %}
+
+          <tr>
+              <td colspan="2">
+                  <div class="grid-row">
+                      <div class="column-one-half check-your-answers__question">Your name</div>
+                      <div class="column-one-half">{{ data['applicantFullName'] if data['applicantFullName'] else '[applicantFullName]' }}</div>
+                  </div>
+              </td>
+              <td class="change-answer">
+                  <a href="{{ '/applicant/name' | redirectUrl('/applicant/who-applying-on-behalf-of', '/check-your-answers')}}">Change</a>
+              </td>
+          </tr>
+
+          <tr>
+              <td colspan="2">
+                  <div class="grid-row">
+                      <div class="column-one-half check-your-answers__question">Email address</div>
+                      <div class="column-one-half">{{ data['applicantEmail'] if data['applicantEmail'] else '[applicantEmail]' }}</div>
+                  </div>
+              </td>
+              <td class="change-answer">
+                  <a href="{{ '/applicant/email-address' | redirectUrl('/check-your-answers')}}">Change</a>
+              </td>
+          </tr>
+
+          <tr>
+              <td colspan="2">
+                  <div class="grid-row">
+                      <div class="column-one-half check-your-answers__question">Your address</div>
+                      <div class="column-one-half">{{ data.applicant.home | address }}</div>
+                  </div>
+              </td>
+              <td class="change-answer">
+                  <a href="{{ '/applicant/address/postcode' | redirectUrl('/check-your-answers')}}">Change</a>
+              </td>
+          </tr>
+
             <!-- the person that died -->
             <tr>
                 <td colspan="3"><span class="heading-medium">About the person who died</span></td>
@@ -203,71 +257,6 @@ Question page
             {% endif %} -->
 
 
-
-            <tr>
-                <td colspan="3"><span class="heading-medium">About you</span></td>
-            </tr>
-            <!-- <tr>
-                <td colspan="2">
-                    <div class="grid-row">
-                        <div class="column-one-half check-your-answers__question">Are you applying for yourself or on behalf of someone else?</div>
-                        <div class="column-one-half">{{ data['whoApplying'] if data['whoApplying'] else '[whoApplying]' }}</div>
-                    </div>
-                </td>
-                <td class="change-answer">
-                    <a href="{{ '/applicant/who-applying-on-behalf-of' | redirectUrl('/applicant/who-applying-on-behalf-of', '/check-your-answers')}}">Change</a>
-                </td>
-            </tr> -->
-
-            {% if (data['whoApplying'] === "Someone else's") %}
-            <tr>
-                <td colspan="2">
-                    <div class="grid-row">
-                        <div class="column-one-half check-your-answers__question">Who are you applying on behalf of?</div>
-                        <div class="column-one-half">{{ data['caveatorFullName'] if data['caveatorFullName'] else '[caveatorFullName]' }}</div>
-                    </div>
-                </td>
-                <td class="change-answer">
-                    <a href="{{ '/applicant/who-applying-on-behalf-of' | redirectUrl('/applicant/who-applying-on-behalf-of', '/check-your-answers')}}">Change</a>
-                </td>
-            </tr>
-            {% endif %}
-
-            <tr>
-                <td colspan="2">
-                    <div class="grid-row">
-                        <div class="column-one-half check-your-answers__question">Your name</div>
-                        <div class="column-one-half">{{ data['applicantFullName'] if data['applicantFullName'] else '[applicantFullName]' }}</div>
-                    </div>
-                </td>
-                <td class="change-answer">
-                    <a href="{{ '/applicant/name' | redirectUrl('/applicant/who-applying-on-behalf-of', '/check-your-answers')}}">Change</a>
-                </td>
-            </tr>
-
-            <tr>
-                <td colspan="2">
-                    <div class="grid-row">
-                        <div class="column-one-half check-your-answers__question">Email address</div>
-                        <div class="column-one-half">{{ data['applicantEmail'] if data['applicantEmail'] else '[applicantEmail]' }}</div>
-                    </div>
-                </td>
-                <td class="change-answer">
-                    <a href="{{ '/applicant/email-address' | redirectUrl('/check-your-answers')}}">Change</a>
-                </td>
-            </tr>
-
-            <tr>
-                <td colspan="2">
-                    <div class="grid-row">
-                        <div class="column-one-half check-your-answers__question">Your address</div>
-                        <div class="column-one-half">{{ data.applicant.home | address }}</div>
-                    </div>
-                </td>
-                <td class="change-answer">
-                    <a href="{{ '/applicant/address/postcode' | redirectUrl('/check-your-answers')}}">Change</a>
-                </td>
-            </tr>
 
         </tbody>
     </table>
