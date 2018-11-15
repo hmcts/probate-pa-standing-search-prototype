@@ -12,7 +12,7 @@ module.exports = function (router) {
   })
 
   router.post('/deceased/dod', function (req, res) {
-    res.redirect('/deceased/alias')
+    res.redirect('/deceased/dob-known')
   })
 
   router.post('/deceased/alias', function (req, res) {
@@ -68,8 +68,25 @@ module.exports = function (router) {
 
 
   router.post('/deceased/dob', function (req, res) {
-    res.redirect('/deceased/domicile')
+    res.redirect('/deceased/alias')
   })
+
+  router.post('/deceased/dob-known', function (req, res) {
+
+  // Make a variable and give it the value from 'juggling-balls'
+  var address = req.session.data['dobKnown']
+
+  // Check whether the variable matches a condition
+  if (address == "Yes"){
+    // Send user to next page
+    res.redirect('/deceased/dob')
+  }
+  else {
+    // Send user to ineligible page
+    res.redirect('/deceased/alias')
+  }
+
+})
 
   router.post('/deceased/domicile', function (req, res) {
     if (req.body.domicile === 'Yes') {

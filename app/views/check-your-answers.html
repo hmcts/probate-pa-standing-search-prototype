@@ -77,6 +77,12 @@ Question page
               </td>
           </tr>
 
+        </tbody>
+    </table>
+
+    <table class="check-your-answers form-group">
+        <tbody>
+
             <!-- the person that died -->
             <tr>
                 <td colspan="3"><span class="heading-medium">About the person who died</span></td>
@@ -107,6 +113,41 @@ Question page
                     <a href="{{ '/deceased/about' | redirectUrl('/deceased/address', '/check-your-answers')}}">Change</a>
                 </td>
             </tr>
+
+            <tr>
+                <td colspan="2">
+                    <div class="grid-row">
+                        <div class="column-one-half check-your-answers__question">Do you know {{ data['deceasedFirstName'] if data['deceasedFirstName'] else '[deceasedFirstName]' }} date of birth?</div>
+                        <div class="column-one-half">{{ data['dobKnown'] if data['dobKnown'] else '[dobKnown]' }}</div>
+                    </div>
+                </td>
+                <td class="change-answer">
+                    <a href="{{ '/deceased/dob-known' | redirectUrl('/deceased/address', '/check-your-answers')}}">Change</a>
+
+                </td>
+            </tr>
+
+            <!-- deceased alias -->
+            {% if (data['dobKnown'] === 'Yes') %}
+            <tr>
+                <td colspan="2">
+                    <div class="grid-row">
+                        <div class="column-one-half check-your-answers__question">What was {{ data['deceasedFirstName'] if data['deceasedFirstName'] else '[deceasedFirstName]' }} date of birth?</div>
+                        <div class="column-one-half">
+                            <div class="grid-row">
+                                <div class="column-one-half">
+                                    {{ data['dob_day'] if data['dob_day'] else '[dob_day]' }} {{ data['dob_month'] | month if data['dob_month'] else '[dob_month]' }} {{ data['dob_year'] if data['dob_year'] else '[dod_year]' }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td class="change-answer">
+                    <a href="{{ '/deceased/dob' | redirectUrl('/deceased/address', '/check-your-answers')}}">Change</a>
+                </td>
+            </tr>
+
+            {% endif %}
 
 
             <tr>
@@ -183,6 +224,7 @@ Question page
                 </td>
             </tr>
 
+            {% if (data['addressKnown'] === 'Yes') %}
             <tr>
                 <td colspan="2">
                     <div class="grid-row">
@@ -194,6 +236,7 @@ Question page
                     <a href="{{ '/deceased/address/postcode' | redirectUrl('/deceased/address', '/check-your-answers')}}">Change</a>
                 </td>
             </tr>
+              {% endif %}
 
             <!-- <tr>
                 <td colspan="3"><span class="heading-medium">[About you]</span></td>
@@ -210,6 +253,12 @@ Question page
                     <a href="{{ '/deceased/address/postcode' | redirectUrl('/deceased/address', '/check-your-answers')}}">Change</a>
                 </td>
             </tr> -->
+
+          </tbody>
+      </table>
+
+      <table class="check-your-answers form-group">
+          <tbody>
 
             <tr>
                 <td colspan="3"><span class="heading-medium">The will and grant</span></td>
