@@ -4,33 +4,31 @@ const addressLookup = require('../services/postcodeService')
 module.exports = function (router) {
   router.post('/applicant/other-executors', function (req, res) {
     if (req.body.otherExecutors === 'Yes') {
-      res.redirect('/applicant/executor-name/2')
+      return res.redirect('/applicant/executor-name/2')
     } else {
-      res.redirect('/deceased/name')
+      return res.redirect('/deceased/name')
     }
   })
 
-
-
   router.post('/applicant/name-on-will', function (req, res) {
     if (req.body.applicantNameSameAsOnWill === 'Yes') {
-      res.redirect('/applicant/phone-number')
+      return res.redirect('/applicant/phone-number')
     } else {
-      res.redirect('/applicant/name-will')
+      return res.redirect('/applicant/name-will')
     }
   })
 
   router.post('/applicant/name-will', function (req, res) {
-    res.redirect('/applicant/reason-name-change')
+    return res.redirect('/applicant/reason-name-change')
   })
 
   router.post('/applicant/reason-name-change', function (req, res) {
-     res.redirect('/applicant/phone-number')
+    return res.redirect('/applicant/phone-number')
   })
 
   router.post('/applicant/phone-number', function (req, res) {
     req.session.data.applicantPhoneNumber = req.body.applicantPhoneNumber
-    res.redirect('/applicant/address/postcode')
+    return res.redirect('/applicant/address/postcode')
   })
 
   router.post('/applicant/address/postcode', function (req, res) {
@@ -41,12 +39,12 @@ module.exports = function (router) {
     set(req.session.data, 'applicant.home.county', req.body.county)
     set(req.session.data, 'applicant.home.postcode', req.body.postcode)
 
-    res.redirect('/deceased/name')
+    return res.redirect('/deceased/name')
   })
 
   router.get('/applicant/address/enter-manually', function (req, res) {
     const title = 'What is your address?'
-    res.render('common/address/enter-manually', {
+    return res.render('common/address/enter-manually', {
       title: title,
       address: get(req.session, 'applicant.home', {})
     })
@@ -54,7 +52,7 @@ module.exports = function (router) {
 
   router.get('/applicant/address/enter-manually', function (req, res) {
     const title = 'What is your address?'
-    res.render('common/address/enter-manually', {
+    return res.render('common/address/enter-manually', {
       title: title,
       address: get(req.session, 'applicant.home', {})
     })
@@ -65,7 +63,7 @@ module.exports = function (router) {
     const postcode = get(req.session.data.applicant, 'home.postcode', '')
     addressLookup(postcode)
       .then((addresses) => {
-        res.render('common/address/postcode', {
+        return res.render('common/address/postcode', {
           postcode: postcode,
           instructionText: '',
           title: title,
@@ -78,8 +76,9 @@ module.exports = function (router) {
   })
 
   router.get('/applicant/address/abroad', function (req, res) {
-    res.render('common/address/enter-abroad', {
-      title: 'What is your address?'
+    return res.render('common/address/enter-abroad', {
+      title: 'What is your address?',
+      hint: 'You can enter a UK or an international address.'
     })
   })
 
@@ -91,40 +90,40 @@ module.exports = function (router) {
     set(req.session.data, 'applicant.home.county', '')
     set(req.session.data, 'applicant.home.postcode', '')
 
-    res.redirect('/deceased/name')
+    return res.redirect('/deceased/name')
   })
 
   router.post('/applicant/address/abroad', function (req, res) {
-    res.redirect('/the-executors/how-many')
+    return res.redirect('/the-executors/how-many')
   })
 
   // Caveat
-    router.post('/applicant/who-applying-on-behalf-of', function (req, res) {
+  router.post('/applicant/who-applying-on-behalf-of', function (req, res) {
     if (req.body.whoApplying === 'Myself') {
-      res.redirect('/applicant/name')
+      return res.redirect('/applicant/name')
     } else {
-      res.redirect('/someone-else/name')
+      return res.redirect('/someone-else/name')
     }
   })
 
   router.post('/applicant/name', function (req, res) {
-    res.redirect('/applicant/email-address')
+    return res.redirect('/applicant/email-address')
   })
 
   router.post('/applicant/email-address', function (req, res) {
-    res.redirect('/applicant/address/postcode')
+    return res.redirect('/applicant/address/postcode')
   })
 
   router.post('/someone-else/name', function (req, res) {
-    req.session.data.caveatorFullName
-    res.redirect('/someone-else/authority')
+    // req.session.data.caveatorFullName
+    return res.redirect('/someone-else/authority')
   })
 
-    router.post('/someone-else/authority', function (req, res) {
+  router.post('/someone-else/authority', function (req, res) {
     if (req.body.permissionGiven === 'No') {
-      res.redirect('...')
+      return res.redirect('...')
     } else {
-      res.redirect('/applicant/name')
+      return res.redirect('/applicant/name')
     }
   })
 }

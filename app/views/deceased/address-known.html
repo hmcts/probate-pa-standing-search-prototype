@@ -25,16 +25,16 @@ Do you know what {{ data['deceasedFirstName'] if data['deceasedFirstName'] else 
 
   <fieldset>
       <div class="multiple-choice">
-      <input id="radio-1" type="radio" name="addressKnown" value="Yes" {{ data['deceasedAlias'] | checkedIf('Yes') }}>
+      <input id="radio-1" type="radio" name="addressKnown" value="Yes" {{ data['addressKnown'] | checkedIf('Yes') }}>
         <label for="radio-1">Yes</label>
       </div>
       <div class="multiple-choice">
-        <input id="radio-2" type="radio" name="addressKnown" value="No" {{ data['deceasedAlias'] | checkedIf('No') }}>
+        <input id="radio-2" type="radio" name="addressKnown" value="No" {{ data['addressKnown'] | checkedIf('No') }}>
         <label for="radio-2">No</label>
       </div>
       <p class="form-block">or</p>
       <div class="multiple-choice">
-        <input id="radio-3" type="radio" name="addressKnown" value="Don't know" {{ data['deceasedAlias'] | checkedIf('DK') }}>
+        <input id="radio-3" type="radio" name="addressKnown" value="Don't know" {{ data['addressKnown'] | checkedIf('DK') }}>
         <label for="radio-3">Don't Know</label>
       </div>
 
