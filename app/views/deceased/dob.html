@@ -1,12 +1,15 @@
-{% extends "question.html" %}
+{% extends "question_no_sign_out.html" %}
 
-{% set question = "What was their date of birth?" %}
+{% set question %}
+What was {{ data['deceasedFirstName'] if data['deceasedFirstName'] else '[deceasedFirstName]' }}'s date of birth?
+{% endset %}
 
 {% block question %}
-    {{ question }}
+{{ question }}
 {% endblock %}
 
 {% block form %}
+
 <p class="form-hint">For example, 31 03 1945</p>
 <div class="form-group">
 <fieldset class="form-group " id ="dod_date">

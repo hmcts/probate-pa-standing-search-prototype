@@ -1,12 +1,15 @@
 {% extends "question_no_sign_out.html" %}
 
-{% set question = "What date did they die?" %}
+{% set question %}
+What was {{ data['deceasedFirstName'] if data['deceasedFirstName'] else '[deceasedFirstName]' }}'s date of death?
+{% endset %}
 
 {% block question %}
-    {{ question }}
+{{ question }}
 {% endblock %}
 
 {% block form %}
+
 <p class="text">Enter an approximate date if you don't know the exact date.</p>
 <p>For example, 30 06 2016.</p>
 <div class="form-group">

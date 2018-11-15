@@ -103,14 +103,14 @@ Question page
             <tr>
                 <td colspan="2">
                     <div class="grid-row">
-                        <div class="column-one-half check-your-answers__question">What was the date that they died?</div>
+                        <div class="column-one-half check-your-answers__question">What was the date {{ data['deceasedFirstName'] if data['deceasedFirstName'] else '[deceasedFirstName]' }} died?</div>
                         <div class="column-one-half">
                             {{ data['dod_day'] if data['dod_day'] else '[dod_day]' }} {{ data['dod_month'] | month if data['dod_month'] else '[dod_month]' }} {{ data['dod_year'] if data['dod_year'] else '[dod_year]' }}
                         </div>
                     </div>
                 </td>
                 <td class="change-answer">
-                    <a href="{{ '/deceased/about' | redirectUrl('/deceased/address', '/check-your-answers')}}">Change</a>
+                    <a href="{{ '/deceased/dod' | redirectUrl('/deceased/address', '/check-your-answers')}}">Change</a>
                 </td>
             </tr>
 
@@ -136,7 +136,7 @@ Question page
                         <div class="column-one-half">
                             <div class="grid-row">
                                 <div class="column-one-half">
-                                    {{ data['dob_day'] if data['dob_day'] else '[dob_day]' }} {{ data['dob_month'] | month if data['dob_month'] else '[dob_month]' }} {{ data['dob_year'] if data['dob_year'] else '[dod_year]' }}
+                                    {{ data['dob_day'] if data['dob_day'] else '[dob_day]' }} {{ data['dob_month'] | month if data['dob_month'] else '[dob_month]' }} {{ data['dob_year'] if data['dob_year'] else '[dob_year]' }}
                                 </div>
                             </div>
                         </div>
@@ -268,7 +268,7 @@ Question page
             <tr>
                 <td colspan="2">
                     <div class="grid-row">
-                        <div class="column-one-half check-your-answers__question">Extra copies of the will and grant</div>
+                        <div class="column-one-half check-your-answers__question">Do you want extra copies of the will and grant?</div>
                         <div class="column-one-half">{{ data['copies'] if data['copies'] else '[copies]' }}</div>
                     </div>
                 </td>
@@ -277,11 +277,11 @@ Question page
                 </td>
             </tr>
 
-            {% if (data['copies'] === "Yes") %}
+
             <tr>
                 <td colspan="2">
                     <div class="grid-row">
-                        <div class="column-one-half check-your-answers__question">Number of copies</div>
+                        <div class="column-one-half check-your-answers__question">Total number of copies you will receive</div>
                         <div class="column-one-half">{{ data['copiesAmount'] if data['copiesAmount'] else '[copiesAmount]' }}</div>
                     </div>
                 </td>
@@ -289,7 +289,7 @@ Question page
                     <a href="{{ '/deceased/copies-amount' | redirectUrl('/check-your-answers', '/check-your-answers')}}">Change</a>
                 </td>
             </tr>
-            {% endif %}
+
 
             <!-- {% if (data['copies'] === "Yes") %}
             <tr>
