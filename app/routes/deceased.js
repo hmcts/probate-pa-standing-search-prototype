@@ -133,6 +133,12 @@ module.exports = function (router) {
     })
   })
 
+  // router.get('/deceased/address/postcode', function (req, res) {
+  //   return res.render('common/address/findAddressComponent', {
+  //     link: 'Enter manually',
+  //   })
+  // })
+
   router.post('/deceased/address/abroad', function (req, res) {
     set(req.session.data, 'deceased.home.street1', req.body.abroadAddress)
     set(req.session.data, 'deceased.home.street2', '')

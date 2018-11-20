@@ -32,11 +32,11 @@ Do you know what {{ data['deceasedFirstName'] if data['deceasedFirstName'] else 
         <input id="radio-2" type="radio" name="addressKnown" value="No" {{ data['addressKnown'] | checkedIf('No') }}>
         <label for="radio-2">No</label>
       </div>
-      <p class="form-block">or</p>
+      <!-- <p class="form-block">or</p>
       <div class="multiple-choice">
         <input id="radio-3" type="radio" name="addressKnown" value="Don't know" {{ data['addressKnown'] | checkedIf('DK') }}>
         <label for="radio-3">Don't Know</label>
-      </div>
+      </div> -->
 
     </fieldset>
 </div>
