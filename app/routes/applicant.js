@@ -60,6 +60,7 @@ module.exports = function (router) {
 
   router.get('/applicant/address/postcode', function (req, res) {
     const title = 'What is your address?'
+    const enterManuallyText = 'Enter manually (including international addresses)'
     const postcode = get(req.session.data.applicant, 'home.postcode', '')
     addressLookup(postcode)
       .then((addresses) => {
@@ -70,7 +71,8 @@ module.exports = function (router) {
           outsideUKText: 'My address is outside the UK',
           addresses: addresses,
           address: get(req.session, 'applicant.home', {}),
-          selectLabel: 'Select your address'
+          selectLabel: 'Select your address',
+          enterManuallyText: enterManuallyText
         })
       })
   })

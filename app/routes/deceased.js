@@ -98,6 +98,7 @@ module.exports = function (router) {
     const deceasedFirstName = req.session.data.deceasedFirstName ? req.session.data.deceasedFirstName : '[deceasedFirstName]'
     // const deceasedLastName = req.session.data.deceasedLastName ? req.session.data.deceasedLastName : '[deceasedLastName]'
     const title = `What was the permanent address of ${deceasedFirstName}?`
+    const enterManuallyText = 'Enter UK address manually'
     const postcode = get(req.session.deceased, 'home.postcode', '')
 
     addressLookup(postcode)
@@ -110,7 +111,8 @@ module.exports = function (router) {
             outsideUKText: 'The address is outside the UK',
             addresses: addresses,
             address: get(req.session, 'deceased.home', {}),
-            selectLabel: 'Select the address'
+            selectLabel: 'Select the address',
+            enterManuallyText: enterManuallyText
           })
       })
   })
@@ -167,7 +169,8 @@ module.exports = function (router) {
   })
 
   router.post('/deceased/copies-amount', function (req, res) {
-    set(req.session.data, 'copiesAmount', parseInt(get(req.session, 'req.body.copiesAmount', 0)) + 1)
+    set(req.session.data, 'copiesAmount', parseInt(get(req.session, 'req.body.copiesAmount', 0)))
+    set(req.session.data, 'copiesAmountPlusOne', req.session.data.copiesAmount + 1, 0)
 
     return res.redirect('/check-your-answers')
   })

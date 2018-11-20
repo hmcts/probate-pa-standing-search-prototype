@@ -1,4 +1,4 @@
-{% macro findAddressComponent(addresses) %}
+{% macro findAddressComponent(addresses, enterManuallyText) %}
 
 <fieldset class="form-group">
     <legend class="visually-hidden">Address</legend>
@@ -56,7 +56,7 @@
 
 
     <div id="enter-manually" style="padding-top:30px;">
-        <a class="link" href="abroad">Enter manually (including international addresses)</a>
+        <a class="link" href="abroad">{{ enterManuallyText }}</a>
     </div>
 
     <!-- <p class="link">{{ link }}</p> -->
