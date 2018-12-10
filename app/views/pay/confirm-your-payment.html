@@ -12,35 +12,35 @@
 
     <table class="confirm-details">
         <tbody><tr>
-            <td>Card number:</td>
+            <td class="bold-small">Card number</td>
             <td id="card-number" class="details">************9372</td>
         </tr>
         <tr>
-            <td>Card brand:</td>
+            <td class="bold-small">Card brand</td>
             <td id="card-brand" class="details">Visa</td>
         </tr>
         <tr>
-            <td>Expiry date:</td>
+            <td class="bold-small">Expiry date</td>
             <td id="expiry-date" class="details">01/18</td>
         </tr>
         <tr>
-            <td>Name on card:</td>
+            <td class="bold-small">Name on card</td>
             <td id="cardholder-name" class="details">{{ data['applicantFirstName'] }} {{ data['applicantLastName'] }}</td>
         </tr>
         <tr>
-            <td>Billing address:</td>
+            <td class="bold-small">Billing address</td>
             <td id="address" class="details">{{data.applicant.home.street1}} {{data.applicant.home.street2}} {{data.applicant.home.street3}} {{data.applicant.home.town}} {{data.applicant.home.county}} {{data.applicant.home.postcode}}</td>
         </tr>
         <tr>
-            <td>Payment for:</td>
+            <td class="bold-small">Payment for</td>
             <td id="payment-description" class="details">Probate Payment: 20</td>
         </tr>
         <tr>
-            <td>Total amount:</td>
+            <td class="bold-small">Total amount</td>
             <td id="amount" class="details">&pound;{{ data['total_due'] }}</td>
         </tr>
         <tr>
-            <td>Confirmation email:</td>
+            <td class="bold-small">Confirmation email</td>
             <td id="email" class="details">{{ data['leadEmailAddress'] }}</td>
         </tr>
     </tbody></table>

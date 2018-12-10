@@ -102,7 +102,7 @@
                                     <tr>
                                         <td width="10" valign="middle">&nbsp;</td>
                                         <td style="font-family: Helvetica, Arial, sans-serif; font-size: 19px; line-height: 1.315789474; max-width: 560px">
-                                            <p class="text">Dear {{ data['applicantFullName'] }}.</p>
+                                            <p class="text">Dear {{ data['applicantFullName'] if data['applicantFullName'] else '[applicantFullName]' }}.</p>
                                             <p class="text">We've received your application to be notified when a grant of probate is issued for
                                             {{ data['deceasedFirstName'] if data['deceasedFirstName'] else '[deceasedFirstName]' }}.</p>
                                             <p class="text">Your application reference number is: 1234-1235-1236-1237.</p>
