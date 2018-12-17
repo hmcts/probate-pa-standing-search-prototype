@@ -1,0 +1,103 @@
+{% extends "layout-start.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+
+
+    <div class="column-full">
+      <div class="phase-banner">
+  <p>
+    <strong class="phase-tag">BETA</strong>
+    <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+</div>
+
+<div class="column-two-thirds">
+
+      <!-- <div class="breadcrumbs">
+    <ol>
+      <li><a href="#">Home</a></li>
+
+      <li><a href="#">Births, deaths, marriages and care</a></li>
+
+
+      <li aria-current="page">Death and bereavement</li>
+
+    </ol>
+  </div> -->
+
+
+
+      <h1 class="heading-xlarge">
+        Get notified when a grant of probate is issued
+<!--         <span class="heading-secondary">Prototype kit: {{releaseVersion}}</span>
+ -->      </h1><!-- {{releaseVersion | log }} -->
+
+ <p>You can get a copy of someone's will and grant of probate when it's been issued by the probate registry. All grants of probate are public records.</p>
+
+ <p>Your application will last for 6 months. If the grant of probate has not been issued in that time, you can apply for another 6 months.</p>
+
+   <h3 class="heading-medium">You will need:</h3>
+
+     <ul class="list list-bullet">
+          <li>the full name of the person who died (and any other names they were known by)</li>
+          <li>the exact date they died</li>
+        </ul>
+
+
+          <h3 class="heading-medium">Fees</h3>
+
+          <p>It costs £10 to apply. Extra copies of the will and grant cost 50p.</p>
+
+          <p>You'll need to pay online by debit or credit card.</p>
+
+
+      <a href="/applicant/name" class="button button-start">Start now</a>
+
+
+    </div>
+
+    <!-- aside -->
+    <div class="column-third">
+
+    <br>
+
+              <aside class="section-blue" role="complementary">
+                </aside>
+                <h3 class="heading-small" id="subsection-title">Related probate services</h3>
+                <ul class="list">
+                  <li><a class="font-xsmall" href="http://probate-prototype.herokuapp.com/start-page-1">Apply for probate</a></li>
+                  <li><a class="font-xsmall" href="https://probate-caveat-proto.herokuapp.com/start">Stop an application for probate</a></li>
+                  <li><a class="font-xsmall" href="https://www.gov.uk/search-will-probate">Find a will</a></li>
+                  </ul>
+
+                <hr>
+
+
+                <ul class="list">
+                  <li><p class="font-xsmall">Explore the topic</p></li>
+                  <li><a class="bold-xsmall" href="https://www.gov.uk/wills-probate-inheritance">Wills, probate and inheritance</a></li>
+                  <li><a class="bold-xsmall" href="https://www.gov.uk/browse/tax/inheritance-tax">Inheritance Tax</a></li>
+                  <li><a class="bold-xsmall" href="https://www.gov.uk/browse/tax/capital-gains">Capital Gains Tax</a></li>
+                  <li><a class="bold-xsmall" href="https://www.gov.uk/browse/births-deaths-marriages/death">Death and bereavement</a></li>
+                  </ul>
+
+
+
+
+
+            </div>
+  </div>
+
+
+</main>
+
+{% endblock %}
